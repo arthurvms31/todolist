@@ -14,16 +14,15 @@ function checkFields(){
     }
 }
 
-function saveNotes(){
-    btn_save.addEventListener('click', () => {
-       localStorage.setItem(dateElement.id,dateElement.value) 
-          for(i = 0; i < field.length; i++) {
-            if(field[i].value != ""){
-                localStorage.setItem(field[i].className,field[i].value)
-        }
-      }
-    })
-}saveNotes()
+btn_save.addEventListener('click', () => {
+   localStorage.setItem(dateElement.id,dateElement.value) 
+  for(i = 0; i < field.length; i++) {
+    if(field[i].value != ""){
+        localStorage.setItem(field[i].className,field[i].value)
+    }
+  }
+})
+
 function defineDate(){
     let date = new Date()
     dateElement.value = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate()
