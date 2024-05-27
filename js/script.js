@@ -36,4 +36,9 @@ function clearNotes(){
     })
 }clearNotes()
 
+checkExistingNotes();
+
+btnSave.addEventListener('click', saveNotes);
+clearNotes();
+
 
