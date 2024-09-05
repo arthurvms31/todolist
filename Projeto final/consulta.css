@@ -1,0 +1,441 @@
+/* Regras existentes */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; 
+}
+
+body {
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header {
+    width: 100%;
+    background-color: #1C446B;
+    backdrop-filter: blur(30px);
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    z-index: 1000; /* Garante que o cabeçalho fique acima do restante do conteúdo */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-container h2 {
+    color: white;
+    font-weight: 100;
+    font-size: large;
+}
+
+.title-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title-container h1 {
+    color: white;
+    font-size: x-large;
+}
+
+nav a {
+    margin: 10px;
+    font-size: large;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    max-width: 50px;
+    margin-right: 15px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: black;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 80px; /* Ajusta o espaço acima para garantir que o conteúdo não sobreponha o cabeçalho */
+}
+
+/* Footer */
+
+footer {
+    background-color: #1C446B;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+/* Task Schedule */
+
+.task-schedule {
+    margin: 120px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+}
+
+.task-schedule h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #1C446B;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #1C446B;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.add-task-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.add-task-form input, .add-task-form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.add-task-form input {
+    flex: 1;
+}
+
+.add-task-form button {
+    background-color: #1C446B;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.add-task-form button:hover {
+    background-color: #163a56;
+}
+
+button.remove-task {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button.remove-task:hover {
+    background-color: #c82333;
+}
+
+/* Glucose Control */
+
+.glucose-control {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+}
+
+.glucose-control h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #1C446B;
+    text-align: center;
+}
+
+.glucose-input {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.glucose-input input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    flex: 1;
+}
+
+.glucose-input button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #1C446B;
+    color: white;
+    cursor: pointer;
+}
+
+.glucose-input button:hover {
+    background-color: #163a56;
+}
+
+.glucose-history {
+    text-align: center;
+}
+
+#glucose-chart {
+    width: 100%;
+    height: 400px;
+}
+
+/* Medical Appointments */
+
+.medical-appointments {
+    margin: 120px auto; /* Ajustado para evitar sobreposição com o cabeçalho */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+}
+
+.medical-appointments h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #1C446B;
+    text-align: center;
+}
+
+.appointment-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.appointment-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.appointment-form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #1C446B;
+    color: white;
+    cursor: pointer;
+}
+
+.appointment-form button:hover {
+    background-color: #163a56;
+}
+
+.appointments-list {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #1C446B;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+button.remove-appointment {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button.remove-appointment:hover {
+    background-color: #c82333;
+}
+
+/* Medical Support */
+
+.medical-support {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90%;
+}
+
+.medical-support h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #1C446B;
+    text-align: center;
+}
+
+.doctor-contacts {
+    margin-bottom: 20px;
+}
+
+.doctor-contacts h3 {
+    font-size: 1.5rem;
+    color: #1C446B;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.doctor-contacts input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: calc(50% - 10px);
+    margin-right: 10px;
+}
+
+.doctor-contacts button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #1C446B;
+    color: white;
+    cursor: pointer;
+}
+
+.doctor-contacts button:hover {
+    background-color: #163a56;
+}
+
+#doctor-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#doctor-list li {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.medication-history {
+    margin-top: 20px;
+}
+
+.medication-history h3 {
+    font-size: 1.5rem;
+    color: #1C446B;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.medication-history textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.medication-history button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #1C446B;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+.medication-history button:hover {
+    background-color: #163a56;
+}

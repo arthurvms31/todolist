@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tela_cadastro.css">
+    <title>Tela de Cadastro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.8em;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img width="50" height="50" src="img/Logo Sa+¦de Pr+¦.png" alt="monzo--v1" class="logo"/>
+            <div class="title-container">
+                <h1 class="principal"> SaúdePro</h1>
+            </div>
+            <nav>
+                <a href="#">Sobre nós</a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <form id="registrationForm">
+            <h1>Faça seu<br>cadastro</h1>
+
+            <div class="input-container">
+                <input type="text" id="nome" placeholder="Nome completo" required> 
+                <img width="20" height="20" src="https://img.icons8.com/ios/50/user--v1.png" alt="user--v1"/>
+                <span class="error" id="nomeError"></span>
+            </div> 
+
+            <div class="input-container">
+                <input type="email" id="email" placeholder="Email" required> 
+                <img width="20" height="20" src="img/o-email.png" alt="email"/>
+                <span class="error" id="emailError"></span>
+            </div> 
+
+            <div class="input-container">
+                <input type="password" id="senha" placeholder="Senha" required>
+                <img width="20" height="20" src="https://img.icons8.com/ios/50/lock-2.png" alt="lock-2"/>
+                <span class="error" id="senhaError"></span>
+            </div>
+
+            <div class="input-container">
+                <input type="password" id="confirmarSenha" placeholder="Confirme sua senha" required>
+                <img width="20" height="20" src="https://img.icons8.com/ios/50/lock-2.png" alt="lock-2"/>
+                <span class="error" id="confirmarSenhaError"></span>
+            </div>
+
+            <button type="submit" class="submit-button">Cadastrar</button>
+
+            <div class="register-link">
+                <p>Já tem conta? <a href="tela_cadastro.html">Login</a></p>
+            </div>
+
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio do formulário para fazer a validação
+
+            // Obtém os valores dos campos
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+            var confirmarSenha = document.getElementById('confirmarSenha').value;
+
+            // Reseta mensagens de erro
+            document.getElementById('nomeError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('senhaError').textContent = '';
+            document.getElementById('confirmarSenhaError').textContent = '';
+
+            var valido = true;
+
+            // Validação de Nome
+            if (!nome) {
+                document.getElementById('nomeError').textContent = 'Nome completo é obrigatório.';
+                valido = false;
+            }
+
+            // Validação de Email
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                document.getElementById('emailError').textContent = 'Email inválido.';
+                valido = false;
+            }
+
+            // Validação de Senha
+            if (!senha) {
+                document.getElementById('senhaError').textContent = 'Senha é obrigatória.';
+                valido = false;
+            }
+
+            // Validação de Confirmação de Senha
+            if (senha !== confirmarSenha) {
+                document.getElementById('confirmarSenhaError').textContent = 'As senhas não coincidem.';
+                valido = false;
+            }
+
+            if (valido) {
+                // Se o formulário for válido, envie-o ou redirecione o usuário
+                window.location.href = 'tela_perfil.html'; // Substitua pela lógica de envio do formulário, se necessário
+            }
+        });
+
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+        }
+    </script>
+</body>
+</html>
