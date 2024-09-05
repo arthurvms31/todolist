@@ -14,6 +14,11 @@ body {
     flex-direction: column;
     justify-content: center;
 }
+.body-text {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1C446B;
+} 
 
 header {
     background-color: #1C446B;
@@ -21,6 +26,59 @@ header {
     padding: 20px;
     text-align: center;
     width: 100%; /* Garante que o header ocupe toda a largura */
+    position: relative;
+    top: 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-container h2{
+    color: white;
+    font-weight: 100;
+    font-size: large;
+}
+.title-container {
+    flex-grow: 1;
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.title-container h1{
+    color: white;
+    font-size: x-large;
+}
+.time{
+    margin-left: 100px;
+}
+
+nav a {
+    margin: 10px;
+    font-size: large;
+}
+
+a {
+    color:white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    max-width: 50px;
+    margin-right: 15px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: 400;
+    color: black;
 }
 
 main {
