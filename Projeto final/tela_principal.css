@@ -145,7 +145,8 @@ footer {
     text-decoration: underline;
 }
 
-.task-schedule {
+/* Estilos para as Metas de Exercício */
+.exercise-goals {
     margin: 120px auto;
     padding: 20px;
     background-color: #ffffff;
@@ -155,72 +156,75 @@ footer {
     width: 90%;
 }
 
-.task-schedule h2 {
+.exercise-goals h2 {
     margin-bottom: 20px;
     font-size: 1.8rem;
     color: #1C446B;
     text-align: center;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #f4f4f4;
-    color: #1C446B;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-.add-task-form {
+.add-goal-form {
     display: flex;
+    flex-direction: column;
     gap: 10px;
     margin-top: 20px;
-    justify-content: center;
 }
 
-.add-task-form input, .add-task-form button {
+.add-goal-form input, .add-goal-form button {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
     box-sizing: border-box;
 }
 
-.add-task-form input {
+.add-goal-form input {
     flex: 1;
 }
 
-.add-task-form button {
+.add-goal-form button {
     background-color: #1C446B;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-.add-task-form button:hover {
+.add-goal-form button:hover {
     background-color: #163a56;
 }
 
-button.remove-task {
-    background-color: #dc3545;
+.goal-list {
+    margin-top: 20px;
+}
+
+.goal-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.goal-item .goal-type {
+    font-weight: bold;
+}
+
+.goal-item .goal-duration,
+.goal-item .goal-frequency {
+    margin-left: 10px;
+}
+
+.goal-item .remove-goal {
+    background-color: #ff4d4d;
     color: white;
     border: none;
-    border-radius: 5px;
     padding: 5px 10px;
+    border-radius: 3px;
     cursor: pointer;
 }
 
-button.remove-task:hover {
-    background-color: #c82333;
+.goal-item .remove-goal:hover {
+    background-color: #cc0000;
 }
-

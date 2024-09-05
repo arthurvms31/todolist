@@ -1,34 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const addTaskButton = document.getElementById('add-task');
-    const taskList = document.getElementById('task-list');
-    const taskInput = document.getElementById('task-input');
-    const timeInput = document.getElementById('time-input');
+    const addGoalButton = document.getElementById('add-goal');
+    const exerciseTypeInput = document.getElementById('exercise-type');
+    const exerciseDurationInput = document.getElementById('exercise-duration');
+    const exerciseFrequencyInput = document.getElementById('exercise-frequency');
 
-    addTaskButton.addEventListener('click', () => {
-        const task = taskInput.value.trim();
-        const time = timeInput.value.trim();
+    addGoalButton.addEventListener('click', () => {
+        const typeValue = exerciseTypeInput.value;
+        const durationValue = exerciseDurationInput.value;
+        const frequencyValue = exerciseFrequencyInput.value;
 
-        if (task && time) {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${task}</td>
-                <td>${time}</td>
-                <td><button class="remove-task">Excluir</button></td>
-            `;
-            taskList.appendChild(row);
-
-            // Clear inputs after adding the task
-            taskInput.value = '';
-            timeInput.value = '';
+        if (typeValue && durationValue && frequencyValue) {
+            addGoal(typeValue, durationValue, frequencyValue);
+            // Clear inputs
+            exerciseTypeInput.value = '';
+            exerciseDurationInput.value = '';
+            exerciseFrequencyInput.value = '';
         } else {
             alert('Por favor, preencha todos os campos.');
         }
     });
 
-    // Delegar evento para remover tarefas
-    taskList.addEventListener('click', (event) => {
-        if (event.target && event.target.classList.contains('remove-task')) {
-            event.target.closest('tr').remove();
-        }
-    });
+    function addGoal(type, duration, frequency) {
+        const goalList = document.querySelector('.goal-list');
+        const goalItem = document.createElement('div');
+        goalItem.classList.add('goal-item');
+
+        goalItem.innerHTML = `
+            <span class="goal-type">${type}</span> - 
+            <span class="goal-duration">Duração: ${duration} minutos</span> - 
+            <span class="goal-frequency">Frequência: ${frequency} vezes por semana</span>
+            <button class="remove-goal">Excluir</button>
+        `;
+
+        goalItem.querySelector('.remove-goal').addEventListener('click', () => {
+            goalList.removeChild(goalItem);
+        });
+
+        goalList.appendChild(goalItem);
+    }
 });

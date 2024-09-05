@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,24 +22,16 @@
             </nav>
         </div>
     </header>
-    <div class="task-schedule">
-        <h2>Horário de Remédios</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Tarefa</th>
-                    <th>Horário</th>
-                    <th>Excluir</th>
-                </tr>
-            </thead>
-            <tbody id="task-list">
-              
-            </tbody>
-        </table>
-        <div class="add-task-form">
-            <input type="text" id="task-input" placeholder="Nova tarefa">
-            <input type="time" id="time-input">
-            <button id="add-task">Adicionar Tarefa</button>
+    <div class="exercise-goals">
+        <h2>Metas de Exercício</h2>
+        <div class="add-goal-form">
+            <input type="text" id="exercise-type" placeholder="Tipo de Exercício">
+            <input type="number" id="exercise-duration" placeholder="Duração (minutos)">
+            <input type="number" id="exercise-frequency" placeholder="Frequência semanal">
+            <button id="add-goal">Adicionar Meta</button>
+        </div>
+        <div class="goal-list">
+            <!-- Metas serão adicionadas aqui -->
         </div>
     </div>
 
