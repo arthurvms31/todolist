@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tela de login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img width="50" height="50" src="img/Logo Sa+¦de Pr+¦.png" alt="monzo--v1" class="logo"/>
+            <div class="title-container">
+                <h1 class="principal"> SaúdePro</h1>
+            </div>
+            <nav>
+                <a href="#">Sobre nós</a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <form action="">
+            <h1>Faça seu<br>Login</h1>
+            
+            <div class="input-container">
+                <input type="email" placeholder="Email" required> 
+                <img width="20" height="20" src="https://img.icons8.com/ios/50/user--v1.png" alt="user--v1"/>
+            </div> 
+            
+            <div class="input-container">
+                <input type="password" placeholder="Senha" required>
+                <img width="20" height="20" src="https://img.icons8.com/ios/50/lock-2.png" alt="lock-2"/>
+                <a href="#">Esqueci minha senha</a>
+            </div>
+            <a href="tela_principal.html"><button type="button" class="submit-button" onclick="window.location.href='tela_perfil.html'">Entrar</button></a>
+            <div class="register-link">
+                <p>Não está Cadastrado? <a href="tela_cadastro.html">Cadastrar</a></p>
+            </div>
+
+            
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </form>
+    </div>
+    
+    <script>
+        function adicionarDoenca() {
+            var doencaInput = document.getElementById("doenca");
+            var doenca = doencaInput.value;
+            if (doenca) {
+                var lista = document.getElementById("lista-doencas");
+                var item = document.createElement("li");
+                item.textContent = doenca;
+                lista.appendChild(item);
+                doencaInput.value = ""; 
+            }
+        }
+
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+        }
+    </script>
+</body>
+</html>
